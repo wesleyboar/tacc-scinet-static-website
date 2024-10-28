@@ -1,2 +1,3 @@
-# tacc-scinet-static-website
-A static single-page website for SCinet.
+# SCinet Static Webpage for SC Conference
+
+A static single-page website for SCinet to adapt each year for SC conference.
