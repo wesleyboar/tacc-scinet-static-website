@@ -5,10 +5,6 @@
     --color-text: #333;
     --color-highlight: #e74c3c;
     
-    /* Images */
-    --header-top-right: url('https://placehold.co/300x200');
-    --header-bottom-left: url('https://placehold.co/200x150');
-    
     /* Layout */
     --content-max-width: 1200px;
     --footer-max-width: 1000px;
@@ -28,33 +24,12 @@ body {
 
 /* Header */
 .site-header {
-    background: var(--color-header-bg);
+    background: var(--color-header-bg);  /* Fallback color */
+    background-image: url('https://placehold.co/1920x600');
+    background-size: cover;
+    background-position: center;
     padding: 2rem 1rem;
     position: relative;
-    overflow: hidden;
-}
-
-.site-header::before,
-.site-header::after {
-    content: '';
-    position: absolute;
-    pointer-events: none;
-}
-
-.site-header::before {
-    background-image: var(--header-top-right);
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 200px;
-}
-
-.site-header::after {
-    background-image: var(--header-bottom-left);
-    bottom: 0;
-    left: 0;
-    width: 200px;
-    height: 150px;
 }
 
 .header-content {
