@@ -1,11 +1,11 @@
 :root {
-	/* Colors */
+	/* Color */
 	--color-text: #333;
 	--color-bg: #fff;
 	--color-header-bg: #FFF1F1;
 	--color-callout-bg: rgba(227, 146, 61, 0.2);
 
-	/* Fonts */
+	/* Font */
 	--font-family-heading:
 	Montserrat, montserrat, "Source Sans", "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif;
 	--font-family-regular:
