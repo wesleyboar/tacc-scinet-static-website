@@ -15,7 +15,12 @@
 	--content-max-width: 1200px;
 	--footer-max-width: 1000px;
 	--header-image-min-width: 300px;
-	--content-padding-inline: 3rem;
+	--content-padding-inline: 100px;
+}
+@media (max-width: 640px) {
+	:root {
+		--content-padding-inline: 8vw;
+	}
 }
 
 
@@ -32,13 +37,12 @@
 
 /* ELEMENTS */
 
-html {
-	min-width: 250px;
-}
-
 /* To allow `rem` units with simple math, but respect user custom font size */
-html { font-size: 62.5%;}
+html { font-size: 62.5%; }
 body { font-size: 1.6rem; }
+@media (max-width: 185px) {
+	body { font-size: 7vw; }
+}
 
 /* To adjust text rendering */
 body {
@@ -89,18 +93,30 @@ p:last-child {
 	background-position: center;
 
 	padding-block: 5vw; /* approx. 65px when screen is 1280px wide */
-	padding-inline: var(--content-padding-inline);
+}
+@media (max-width: 240px) {
+	.header {
+		padding-block: 10vw;
+	}
 }
 
 .header__content {
 	max-width: var(--content-max-width);
-	margin: 0 auto;
+	margin-inline: auto;
+	padding-inline: var(--content-padding-inline);
+
 	display: grid;
 	grid-template-columns: repeat(
 		auto-fit, minmax( min( 100%, var(--header-image-min-width)), 1fr )
 	);
 	column-gap: 40px;
 	row-gap: 20px;
+}
+@media (max-width: 240px) {
+	.header__content {
+		column-gap: 3.125vw;
+		row-gap: 1.5625vw;
+	}
 }
 .header__content .header__media {
 	min-width: 0;
@@ -118,6 +134,11 @@ h1.header__logos {
 .header__logos + h2 {
 	font-size: 2.6rem;
 	margin-top: 10px;
+}
+@media (max-width: 240px) {
+	.header__logos + h2 {
+		font-size: 10vw;
+	}
 }
 
 .header__content h2 {
