@@ -61,9 +61,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-family-heading);
 }
+
+/* To avoid image overflow */
 img {
 	max-width: 100%;
 }
+
+/* To avoid extra space after text at end of a section */
 p:last-child {
 	margin-bottom: 0;
 }
@@ -74,7 +78,10 @@ p:last-child {
 
 /* COMPONENTS */
 
+
+
 /* Header */
+
 .header {
 	background-color: var(--color-header-bg);
 	background-image: url("./img/header_bg.png");
@@ -122,6 +129,14 @@ h1.header__logos {
 	height:100%;
 	object-fit: cover;
 }
+
+
+
+
+/* ↓ CONTINUE DEVELOPMENT ↓ */
+
+
+
 
 /* Main content */
 .site-main {
