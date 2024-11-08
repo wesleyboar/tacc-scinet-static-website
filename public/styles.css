@@ -1,8 +1,10 @@
 :root {
 	/* Color */
-	--color-text: #333;
+	--color-text: #000;
 	--color-bg: #fff;
+	--color-main-header-txt: #812927;
 	--color-header-bg: #FFF1F1;
+	--color-callout-txt: #000;
 	--color-callout-bg: rgba(227, 146, 61, 0.2);
 
 	/* Font */
@@ -159,15 +161,25 @@ h1.header__logos {
 
 
 
-/* Main content */
-.site-main {
+/* Main Content */
+
+.main {
 	max-width: var(--content-max-width);
-	margin: 2rem auto;
+	margin-block: 50px 100px;
+	margin-inline: auto;
 	padding: 0 var(--content-padding-inline);
 }
 
-.intro, .mission, .value, .innovation-award {
-	margin-bottom: 2rem;
+.main__section {
+	margin-block: 3em;
+}
+.main__section h3 {
+	color: var(--color-main-header-txt);
+	font-size: 1em;
+	margin-block: 0 1.5em;
+}
+.main__section:first-child h3 {
+	margin-block-start: unset;
 }
 
 .callout {
