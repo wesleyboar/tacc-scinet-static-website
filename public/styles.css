@@ -74,12 +74,8 @@ img {
 }
 
 /* To avoid extra space after text at end of a section */
-p:first-child {
-	margin-top: 0;
-}
-p:last-child {
-	margin-bottom: 0;
-}
+:is(p, li):first-child { margin-top: 0; }
+:is(p, li):last-child { margin-bottom: 0; }
 
 
 
@@ -170,12 +166,12 @@ h1.header__logos {
 .main__section {
 	margin-block: 3em;
 }
-.main__section h3 {
+.main__section-title {
 	color: var(--color-main-bold-txt);
 	font-size: 1em;
 	margin-block: 0 1.5em;
 }
-.main__section:first-child h3 {
+.main__section:first-child .main__section-title {
 	margin-block-start: unset;
 }
 
@@ -185,18 +181,27 @@ h1.header__logos {
 
 .callout {
 	background: var(--color-callout-bg);
-	padding: 2rem;
-	margin-bottom: 2rem;
+
+	padding: 30px;
 }
-.callout h3 {
-	margin-bottom: 1rem;
+.callout__title {
+	margin-block: unset;
+	font-weight: normal;
+	font-size: 2.0rem;
 }
-.callout ul {
+.callout__list {
 	list-style-type: none;
-	padding: 0;
+	margin-block: unset;
+	padding-inline-start: unset;
 }
-.callout li {
-	margin-bottom: 1rem;
+/* FAQ: Reduced specificity so ELEMENTS styles can remove margin */
+.callout__list li:not(:last-child) {
+	margin-block: 0.75em;
+}
+.callout__list em {
+	font-size: 2.0rem;
+	font-style: normal;
+	font-weight: bold;
 }
 
 
@@ -210,7 +215,7 @@ h1.header__logos {
 	margin: unset;
 
 	color: var(--color-main-bold-txt);
-	font-weight: 700;
+	font-weight: bold;
 }
 .quote__author {
 	margin-top: 1em;
