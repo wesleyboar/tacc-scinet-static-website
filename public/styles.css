@@ -23,7 +23,7 @@
 	--logo-grid-col-gap: 25px;
 	--logo-grid-cell-width: 150px;
 	--logo-grid-large-cell-width: 180px;
-	--logo-grid-medium-cell-width: 95px;
+	--logo-grid-medium-cell-width: 100px;
 	--logo-grid-small-cell-width: 80px;
 }
 @media (max-width: 640px) {
