@@ -14,7 +14,7 @@
 	Nunito, -apple-system, "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 	/* Layout */
-	--content-max-width: 1200px;
+	--content-max-width: 1400px;
 	--footer-max-width: 1000px;
 	--header-image-min-width: 300px;
 	--content-padding-inline: 100px;
@@ -73,9 +73,10 @@ img {
 	max-width: 100%;
 }
 
-/* To avoid extra space after text at end of a section */
-:is(p, li):first-child { margin-top: 0; }
-:is(p, li):last-child { margin-bottom: 0; }
+/* To avoid extra space at start and end of a section */
+:is(p, li):is(:first-child, :last-child) {
+	margin-block: 0;
+}
 
 
 
@@ -93,7 +94,7 @@ img {
 	background-size: cover;
 	background-position: center;
 
-	padding-block: 5vw; /* approx. 65px when screen is 1280px wide */
+	padding-block: min(5vw, 65px);
 }
 @media (max-width: 240px) {
 	.header {
@@ -161,17 +162,25 @@ h1.header__logos {
 	margin-block: 50px 100px;
 	margin-inline: auto;
 	padding: 0 var(--content-padding-inline);
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: 50px;
+}
+.main__section {
+	min-width: min(100%, 500px);
+	flex: 1;
 }
 
-.main__section {
+.main__article:not(:first-child, :last-child) {
 	margin-block: 3em;
 }
-.main__section-title {
+.main__article-title {
 	color: var(--color-main-bold-txt);
 	font-size: 1em;
 	margin-block: 0 1.5em;
 }
-.main__section:first-child .main__section-title {
+.main__article:first-child .main__article-title {
 	margin-block-start: unset;
 }
 
