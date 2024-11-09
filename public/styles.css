@@ -184,14 +184,13 @@ h1.header__logos {
 	margin-block: 3em;
 }
 
-.main__article-title {
+.main__article .main__title {
 	color: var(--color-main-bold-txt);
 	font-size: 1em;
 	margin-block: 0 1.5em;
-
-	.main__article:first-child & {
-		margin-block-start: unset;
-	}
+}
+.main__article:first-child .main__title {
+	margin-block-start: unset;
 }
 
 
