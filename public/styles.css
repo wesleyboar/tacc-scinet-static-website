@@ -1,11 +1,11 @@
 :root {
 	/* Color */
 	--color-text: #000;
-	--color-bg: #fff;
+	--color-bkgd: #fff;
 	--color-main-bold-txt: #812927;
-	--color-header-bg: #FFF1F1;
+	--color-header-bkgd: #FFF1F1;
 	--color-callout-txt: #000;
-	--color-callout-bg: rgba(227, 146, 61, 0.2);
+	--color-callout-bkgd: rgba(227, 146, 61, 0.2);
 	--color-footer-border: orange;
 
 	/* Font */
@@ -66,7 +66,7 @@ body {
 body {
 	margin: 0;
 
-	background-color: var(--color-bg);
+	background-color: var(--color-bkgd);
 	color: var(--color-text);
 
 	font-family: var(--font-family-regular);
@@ -96,7 +96,7 @@ img {
 /* Header */
 
 .header {
-	background-color: var(--color-header-bg);
+	background-color: var(--color-header-bkgd);
 	background-image: url("./img/header_bg.png");
 	background-size: cover;
 	background-position: center;
@@ -200,7 +200,7 @@ h1.header__logos {
 /* Callout */
 
 .callout {
-	background: var(--color-callout-bg);
+	background: var(--color-callout-bkgd);
 
 	padding: 30px;
 }
