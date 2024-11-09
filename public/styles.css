@@ -133,18 +133,18 @@ img {
 h1.header__logos {
 	margin-block: 0;
 }
-.header__logos + h2 {
+.header__title {
 	font-size: 2.6rem;
-	margin-top: 10px;
-}
-@media (max-width: 240px) {
-	.header__logos + h2 {
-		font-size: 10vw;
+	text-transform: uppercase;
+
+	.header__logos + & {
+		margin-top: 10px;
 	}
 }
-
-.header__content h2 {
-	text-transform: uppercase;
+@media (max-width: 240px) {
+	.header__title {
+		font-size: 10vw;
+	}
 }
 
 .header__media {
@@ -162,7 +162,10 @@ h1.header__logos {
 	margin-block: 50px 100px;
 	margin-inline: auto;
 	padding: 0 var(--content-padding-inline);
+}
 
+/* For two-column responsive layout */
+.main {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 50px;
@@ -175,13 +178,15 @@ h1.header__logos {
 .main__article:not(:first-child, :last-child) {
 	margin-block: 3em;
 }
+
 .main__article-title {
 	color: var(--color-main-bold-txt);
 	font-size: 1em;
 	margin-block: 0 1.5em;
-}
-.main__article:first-child .main__article-title {
-	margin-block-start: unset;
+
+	.main__article:first-child & {
+		margin-block-start: unset;
+	}
 }
 
 
@@ -193,24 +198,26 @@ h1.header__logos {
 
 	padding: 30px;
 }
+
 .callout__title {
 	margin-block: unset;
 	font-weight: normal;
 	font-size: 2.0rem;
 }
+
 .callout__list {
 	list-style-type: none;
 	margin-block: unset;
 	padding-inline-start: unset;
-}
-/* FAQ: Reduced specificity so ELEMENTS styles can remove margin */
-.callout__list li:not(:last-child) {
-	margin-block: 0.75em;
-}
-.callout__list em {
-	font-size: 2.0rem;
-	font-style: normal;
-	font-weight: bold;
+
+	& li:not(:last-child) {
+		margin-block: 0.75em;
+	}
+	& em {
+		font-size: 2.0rem;
+		font-style: normal;
+		font-weight: bold;
+	}
 }
 
 
@@ -227,9 +234,11 @@ h1.header__logos {
 	font-weight: bold;
 }
 .quote__author {
-	margin-top: 1em;
-
 	font-size: 1.2rem;
+
+	.quote__text + & {
+		margin-top: 1em;
+	}
 }
 
 
