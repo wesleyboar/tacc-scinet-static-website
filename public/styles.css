@@ -269,7 +269,26 @@ h1.header__logos {
 	}
 	.footer__section > & {
 		text-align: center;
+		text-transform: uppercase;
 		margin-block: 50px;
+
+		& { position: relative; }
+		&::after {
+			--border-width: 5px;
+
+			position: absolute;
+			top: 50%;
+			margin-top: calc( -1 * var(--border-width) / 2 );
+			z-index: 1;
+
+			content: "";
+			display: block;
+			width: 100%;
+
+			border-top: solid;
+			border-top-width: var(--border-width);
+			border-top-color: var(--color-footer-border);
+		}
 	}
 }
 
