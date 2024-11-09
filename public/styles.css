@@ -15,9 +15,14 @@
 
 	/* Layout */
 	--content-max-width: 1400px;
+	--content-padding-inline: 100px;
 	--footer-max-width: 1000px;
 	--header-image-min-width: 300px;
-	--content-padding-inline: 100px;
+	--logo-grid-row-gap: 10px;
+	--logo-grid-col-gap: 35px;
+	--logo-grid-cell-width: 150px;
+	--logo-grid-large-cell-width: 200px;
+	--logo-grid-small-cell-width: 115px;
 }
 @media (max-width: 640px) {
 	:root {
@@ -243,11 +248,9 @@ h1.header__logos {
 
 
 
+/* Footer */
 
-
-/* FOOTER */
-
-.site-footer {
+.footer {
 	margin-top: 4rem;
 	border-top: 4px solid var(--color-text);
 	max-width: var(--footer-max-width);
@@ -258,14 +261,36 @@ h1.header__logos {
 	align-items: center;
 }
 
-.section-title {
+.footer__title {
+	text-align: center;
+}
+
+.footer__section .footer__title {
 	text-align: center;
 	margin: 2rem 0;
 }
 
+
+
+/* Logo Grid */
+
 .logo-grid {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 2rem;
-	justify-content: center;
+	justify-content: space-between;
+	align-items: center;
+	row-gap: var(--logo-grid-row-gap);
+	column-gap: var(--logo-grid-col-gap);
+
+	padding-block: 35px;
+}
+.logo-grid > * {
+	flex: 1;
+	margin-inline: auto;
+}
+.logo-grid > .logo-grid__cell--large {
+	max-width: var(--logo-grid-large-cell-width);
+}
+.logo-grid > .logo-grid__cell--small {
+	max-width: var(--logo-grid-small-cell-width);
 }
